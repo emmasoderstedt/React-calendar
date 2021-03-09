@@ -21,11 +21,10 @@ function App() {
   const setTileClassName = ({ activeStartDate, date, view }) => {
     //return view === "month" && date.getDay() === 3 ? "wednesday" : "tile";
     return dates.forEach(d => {
-      if (d.date.toDateString() === date.toDateString())
-      {
+      if (d.date.toDateString() === date.toDateString()) {
         console.log("sätter klassnamn")
         return "tile"
-      } 
+      }
     });
 
   }
@@ -35,22 +34,22 @@ function App() {
 
     dates.forEach(d => {
       let newActiveDate;
-      if (d.date.toDateString() === value.toDateString())
-      {
+      if (d.date.toDateString() === value.toDateString()) {
         newActiveDate = {
           date: value,
           title: d.title
         }
         setActiveDate(newActiveDate);
-      } 
+      }
     });
   };
 
   return (
     <div className="App">
       <Calendar
+        className="calendar"
         onChange={onChange}
-        value={activeDate? activeDate.date : null}
+        value={activeDate ? activeDate.date : null}
         minDate={new Date(2021, 0, 1)}
         maxDate={new Date(2021, 11, 31)}
         minDetail="year"
@@ -63,11 +62,11 @@ function App() {
         }}
       />
 
-        {activeDate ? 
-          <div> {activeDate.title}</div>
-          :
-          <div/>
-        }
+      {activeDate ?
+        <div> {activeDate.title}</div>
+        :
+        <div />
+      }
     </div>
   );
 }

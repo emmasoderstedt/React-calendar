@@ -1,8 +1,12 @@
 .App {
-  text-align: -webkit-center;
+  /* text-align: -webkit-center; */
+  text-align: center;
 
 }
-
+.calendar{
+  border: 10px solid red;
+  width: 40%;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
